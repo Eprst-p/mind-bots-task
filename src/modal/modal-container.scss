@@ -1,0 +1,36 @@
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9997;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  animation-name: appear;
+  animation-duration: 300ms;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.modal-wrapper__overlay {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  cursor: pointer;
+}
+
+.modal-content {
+  z-index: 9999;
+}
+
+
+
+
+

@@ -1,0 +1,41 @@
+@import '../styles';
+
+.modal-remove {
+  background-color: $background-color-dark;
+  border: $border;
+  border-radius: 10px;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.modal-remove__title {
+  font-size: 90%;
+  font-weight: bold;
+}
+
+.modal-remove__buttons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.remove-btn {
+  background-color: $background-color-light;
+  border: $border;
+  border-radius: 10px;
+  font-size: $btn-font-size;
+  min-width: 150px;
+  height: 30px;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.remove-btn:hover {
+  background-color: $btn-color-on-hover;
+  cursor: pointer;
+}
+

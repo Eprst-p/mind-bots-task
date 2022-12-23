@@ -1,0 +1,119 @@
+.task-form {
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: solid 2px #0e2d73;
+  border-radius: 10px;
+  background-color: #f1542a;
+}
+.task-form__top-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.task-form__title_label {
+  display: flex;
+  flex-direction: column;
+  font-size: 75%;
+  margin: 5px;
+}
+.task-form__title_field {
+  height: 30px;
+  border: solid 2px #0e2d73;
+  border-radius: 10px;
+  background-color: #e7d17f;
+  font-size: calc(10px + 1vmin);
+  min-width: 500px;
+}
+.task-form__description_label {
+  display: flex;
+  flex-direction: column;
+  font-size: 75%;
+  margin: 5px;
+}
+.task-form__description {
+  background-color: #e7d17f;
+  border: solid 2px #0e2d73;
+  font-size: calc(8px + 1vmin);
+}
+.task-form__upper_buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.task-status-btn {
+  background-color: #e7d17f;
+  border: solid 2px #0e2d73;
+  border-radius: 10px;
+  font-size: calc(8px + 1vmin);
+  min-width: 150px;
+  height: 30px;
+  padding: 5px;
+  margin-right: 5px;
+}
+.task-status-btn:hover {
+  background-color: gold;
+  font-weight: bold;
+  cursor: pointer;
+}
+.task-status-btn.done {
+  background-color: rgba(71, 169, 43, 0.97);
+}
+.task-status-btn.done:hover {
+  background-color: gold;
+}
+.task-status-btn.failed {
+  background-color: rgba(252, 38, 38, 0.76);
+}
+.task-status-btn.failed:hover {
+  background-color: gold;
+}
+.delete-btn {
+  min-width: 150px;
+  height: 30px;
+  border: solid 2px #0e2d73;
+  border-radius: 10px;
+  font-size: calc(8px + 1vmin);
+  background-color: #e7d17f;
+}
+.delete-btn:hover {
+  background-color: gold;
+  font-weight: bold;
+  color: #910101;
+  cursor: pointer;
+}
+.task-form__bottom_buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.save-btn {
+  margin: 5px;
+  min-width: 120px;
+  min-height: 30px;
+  background-color: rgba(57, 164, 6, 0.97);
+  border-radius: 10px;
+}
+.save-btn:hover {
+  background-color: gold;
+  font-weight: bold;
+  cursor: pointer;
+}
+.cancel-btn {
+  margin: 5px;
+  min-width: 120px;
+  min-height: 30px;
+  background-color: #e7d17f;
+  border-radius: 10px;
+}
+.cancel-btn:hover {
+  background-color: gold;
+  font-weight: bold;
+  cursor: pointer;
+}
+.task-form__files {
+  margin: 5px;
+}
+.task-form__files_filename {
+  font-size: calc(8px + 1vmin);
+}

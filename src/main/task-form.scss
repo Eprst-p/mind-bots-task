@@ -1,0 +1,139 @@
+@import '../styles';
+
+.task-form {
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: $border;
+  border-radius: 10px;
+  background-color: $background-color-dark;
+}
+
+.task-form__top-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+//название задачи
+.task-form__title_label {
+  display: flex;
+  flex-direction: column;
+  font-size: 75%;
+  margin: 5px;
+}
+
+.task-form__title_field {
+  height: 30px;
+  border: $border;
+  border-radius: 10px;
+  background-color: $background-color-light;
+  font-size: calc(10px + 1vmin);
+  min-width: 500px;
+}
+
+//описание задачи
+.task-form__description_label {
+  display: flex;
+  flex-direction: column;
+  font-size: 75%;
+  margin: 5px;
+}
+
+.task-form__description {
+  background-color: $background-color-light;
+  border: $border;
+  font-size: calc(8px + 1vmin);
+}
+
+//верхние кнопки формы
+.task-form__upper_buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.task-status-btn {
+  background-color: $background-color-light;
+  border: $border;
+  border-radius: 10px;
+  font-size: $btn-font-size;
+  min-width: 150px;
+  height: 30px;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.task-status-btn:hover {
+  background-color: $btn-color-on-hover;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.task-status-btn.done {
+  background-color: $task-done-color;
+}
+
+.task-status-btn.done:hover {
+  background-color: $btn-color-on-hover;
+}
+
+.task-status-btn.failed {
+  background-color: $task-failed-color;
+}
+
+.task-status-btn.failed:hover {
+  background-color: $btn-color-on-hover;
+}
+
+.delete-btn {
+  min-width: 150px;
+  height: 30px;
+  border: $border;
+  border-radius: 10px;
+  font-size: $btn-font-size;
+  background-color: $background-color-light;
+}
+
+.delete-btn:hover {
+  background-color: $btn-color-on-hover;
+  font-weight: bold;
+  color: #910101;
+  cursor: pointer;
+}
+
+//нижние кнопки формы
+.task-form__bottom_buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-btn {
+  margin:5px;
+  min-width: 120px;
+  min-height: 30px;
+  background-color: $save-btn;
+  border-radius: 10px;
+}
+
+.save-btn:hover {
+  background-color: $btn-color-on-hover;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  margin:5px;
+  min-width: 120px;
+  min-height: 30px;
+  background-color: $background-color-light;
+  border-radius: 10px;
+}
+
+.cancel-btn:hover {
+  background-color: $btn-color-on-hover;
+  font-weight: bold;
+  cursor: pointer;
+}

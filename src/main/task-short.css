@@ -1,0 +1,31 @@
+.todo-task {
+  border: solid 2px #0e2d73;
+  border-radius: 10px;
+  margin: 20px 10px 10px 40px;
+  min-width: 400px;
+}
+.todo-task:hover {
+  cursor: pointer;
+  background-color: gold;
+}
+.todo-task__title {
+  margin: 5px;
+}
+.todo-task__end-date {
+  font-size: 60%;
+  text-align: right;
+}
+.todo-task.done {
+  background: rgba(71, 169, 43, 0.97);
+}
+.todo-task.done:hover {
+  cursor: pointer;
+  background-color: gold;
+}
+.todo-task.failed {
+  background: rgba(252, 38, 38, 0.76);
+}
+.todo-task.failed:hover {
+  cursor: pointer;
+  background-color: gold;
+}

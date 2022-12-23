@@ -1,0 +1,41 @@
+@import '../styles';
+
+.todo-task {
+  border: $border;
+  border-radius: 10px;
+  margin: 20px 10px 10px 40px;
+  min-width: 400px;
+}
+
+.todo-task:hover {
+  cursor:pointer;
+  background-color: $btn-color-on-hover;
+}
+
+.todo-task__title {
+  margin: 5px;
+}
+
+.todo-task__end-date {
+  font-size: 60%;
+  text-align: right;
+}
+
+.todo-task.done {
+  background: $task-done-color;
+}
+
+.todo-task.done:hover {
+  cursor:pointer;
+  background-color: $btn-color-on-hover;
+}
+
+.todo-task.failed {
+  background: $task-failed-color;
+}
+
+.todo-task.failed:hover {
+  cursor:pointer;
+  background-color: $btn-color-on-hover;
+}
+

@@ -1,0 +1,32 @@
+.header {
+  background-color: #f1542a;
+  width: 100vw;
+  border: solid 2px #0e2d73;
+}
+.header-el {
+  margin: 5px;
+}
+.header__title {
+  text-align: center;
+}
+.header__deals-block {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.header__add-task-btn {
+  background-color: #e7d17f;
+  border: solid 2px #0e2d73;
+  border-radius: 10px;
+  font-size: calc(8px + 1vmin);
+  min-width: 150px;
+  height: 30px;
+  padding: 5px;
+  margin-right: 5px;
+}
+.header__add-task-btn:hover {
+  background-color: gold;
+  cursor: pointer;
+  font-weight: bold;
+}

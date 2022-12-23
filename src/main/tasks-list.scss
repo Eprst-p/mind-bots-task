@@ -1,0 +1,23 @@
+@import '../styles';
+
+.tasks-list {
+  min-height: 500px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.tasks-list__category {
+  margin: 10px;
+  border: $border;
+  min-width: 400px;
+}
+
+.tasks-list__category > h6 {
+  border-bottom: $border;
+  margin: 0;
+  padding: 5px;
+}

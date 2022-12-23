@@ -1,0 +1,19 @@
+.tasks-list {
+  min-height: 500px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+.tasks-list__category {
+  margin: 10px;
+  border: solid 2px #0e2d73;
+  min-width: 400px;
+}
+.tasks-list__category > h6 {
+  border-bottom: solid 2px #0e2d73;
+  margin: 0;
+  padding: 5px;
+}
