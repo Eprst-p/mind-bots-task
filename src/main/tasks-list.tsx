@@ -15,7 +15,6 @@ function TasksList(): JSX.Element {
         localStorage.setItem('allTasks', JSON.stringify(allTasks));
     }, [allTasks])
 
-
     return (
         <div className="tasks-list">
             {

@@ -51,8 +51,7 @@ function TaskForm(): JSX.Element {
         dispatch(saveTask(newTask))
         dispatch(changeActiveModal(ActiveModal.NoModal));
 
-        //проверка на то, что добавляется новая задача (кривовато, но зато без новых полей и переменных)
-        if (newTask.id === defaultTask.id) {
+        if (newTask.id === defaultTask.id) { //проверка на то, что добавляется именно новая задача (кривовато, но зато без новых полей и переменных)
             sendBotMessage(BotMessage.AddTask, newTask.title)
         }
         if (newTask.taskStatus === StatusName.Done) {

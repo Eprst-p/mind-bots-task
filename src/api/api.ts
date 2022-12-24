@@ -1,8 +1,7 @@
 import {BotMessage} from "../settings/bot-message";
-import TOKEN from "../settings/constants.mjs";
+import {TOKEN} from "../settings/constants";
 
 const botGetUrl = `https://api.telegram.org/bot${TOKEN}/getMe`;
-
 
 export const getUserId = async () => {
     const response = await fetch('/user-id');
@@ -19,11 +18,10 @@ export const checkBotConnection = () => {
 
 export const sendBotMessage = async (botMessage:BotMessage, taskName:string) => {
     try {
-        const message = `задача ${taskName} ${botMessage}`
+        const message = `задача: ${taskName} - ${botMessage}`
         const data = await getUserId();
         const botSendMessage = `https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${data.userID}&text=${message}`;
         fetch(botSendMessage)
-            .then((res) => console.log(res))
     } catch (error) {
         console.log(error)
     }
