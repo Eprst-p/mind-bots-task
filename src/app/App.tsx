@@ -5,10 +5,15 @@ import {loadTasks} from "../store/data-process/data-process";
 import {createdTasks} from "../mocks/create-tasks";
 import Main from "../main/main";
 import {useEffect} from "react";
+import {checkBotConnection} from "../api/api";
 
 function App() {
     const dispatch = useAppDispatch();
     const localTasks = localStorage.getItem('allTasks');
+
+    useEffect(() => {
+        checkBotConnection();
+    }, []);
 
     useEffect(() => {
         if (localTasks) {

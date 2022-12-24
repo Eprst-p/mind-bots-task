@@ -9,7 +9,8 @@ import {TodoTaskType} from "../types/todo-task-type";
 import {changeActiveModal, saveTask} from "../store/data-process/data-process";
 import {ActiveModal} from "../settings/active-modal";
 import {faker} from "@faker-js/faker";
-import {sendBotMessage} from "../bot/bot";
+import {sendBotMessage} from "../api/api";
+import {BotMessage} from "../settings/bot-message";
 
 function TaskForm(): JSX.Element {
     const dispatch = useAppDispatch();
@@ -50,9 +51,16 @@ function TaskForm(): JSX.Element {
         dispatch(saveTask(newTask))
         dispatch(changeActiveModal(ActiveModal.NoModal));
 
-
-
-        sendBotMessage();
+        //проверка на то, что добавляется новая задача (кривовато, но зато без новых полей и переменных)
+        if (newTask.id === defaultTask.id) {
+            sendBotMessage(BotMessage.AddTask, newTask.title)
+        }
+        if (newTask.taskStatus === StatusName.Done) {
+            sendBotMessage(BotMessage.TaskDone, newTask.title)
+        }
+        if (newTask.taskStatus === StatusName.Failed) {
+            sendBotMessage(BotMessage.FailedTask, newTask.title)
+        }
     }
 
     const handlerFormCancel = () => {

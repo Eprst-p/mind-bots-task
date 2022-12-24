@@ -1,15 +1,19 @@
 import './modal-remove.scss';
 import {changeActiveModal, removeTask} from "../store/data-process/data-process";
 import {useAppDispatch, useAppSelector} from "../hooks/redux-hooks";
-import {getChosenId} from "../store/selectors";
+import {getChosenId, getTaskById} from "../store/selectors";
 import {ActiveModal} from "../settings/active-modal";
+import {sendBotMessage} from "../api/api";
+import {BotMessage} from "../settings/bot-message";
 
 function ModalRemove() {
     const dispatch = useAppDispatch();
     const id = useAppSelector(getChosenId);
+    const task = useAppSelector(getTaskById)
 
     const handlerRemoveConfirmBtnClick = () => {
         dispatch(removeTask(id));
+        sendBotMessage(BotMessage.RemovedTask, task.title)
         dispatch(changeActiveModal(ActiveModal.NoModal));
     }
 
