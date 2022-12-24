@@ -20,7 +20,7 @@ function App() {
     }, [dispatch, localTasks])
 
     return (
-    <div className="App">
+    <div className="app">
       <Header />
       <Main />
     </div>

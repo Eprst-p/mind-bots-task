@@ -9,6 +9,7 @@ import {TodoTaskType} from "../types/todo-task-type";
 import {changeActiveModal, saveTask} from "../store/data-process/data-process";
 import {ActiveModal} from "../settings/active-modal";
 import {faker} from "@faker-js/faker";
+import {sendBotMessage} from "../bot/bot";
 
 function TaskForm(): JSX.Element {
     const dispatch = useAppDispatch();
@@ -48,6 +49,10 @@ function TaskForm(): JSX.Element {
         }
         dispatch(saveTask(newTask))
         dispatch(changeActiveModal(ActiveModal.NoModal));
+
+
+
+        sendBotMessage();
     }
 
     const handlerFormCancel = () => {
