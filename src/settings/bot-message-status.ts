@@ -1,4 +1,4 @@
-export enum BotMessage {
+export enum BotMessageStatus {
   AddTask = 'добавлена',
   RemovedTask = 'удалена',
   TaskDone = 'выполнена',

@@ -1,28 +1,17 @@
-import {BotMessage} from "../settings/bot-message";
-import {TOKEN} from "../settings/constants";
+import {BotMessageStatus} from "../settings/bot-message-status";
 
-const botGetUrl = `https://api.telegram.org/bot${TOKEN}/getMe`;
-
-export const getUserId = async () => {
-    const response = await fetch('/user-id');
+export const sendMessageToServer = async (messageStatus:BotMessageStatus, taskName:string) => {
+    const sendData = {
+        messageStatus: messageStatus,
+        taskName: taskName
+    }
+    const response = await fetch(`/message`, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(sendData)
+    });
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
-    return body;
 };
-
-export const checkBotConnection = () => {
-    fetch(botGetUrl)
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err))
-}
-
-export const sendBotMessage = async (botMessage:BotMessage, taskName:string) => {
-    try {
-        const message = `задача: ${taskName} - ${botMessage}`
-        const data = await getUserId();
-        const botSendMessage = `https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${data.userID}&text=${message}`;
-        fetch(botSendMessage)
-    } catch (error) {
-        console.log(error)
-    }
-}

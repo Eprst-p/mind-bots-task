@@ -9,8 +9,8 @@ import {TodoTaskType} from "../types/todo-task-type";
 import {changeActiveModal, saveTask} from "../store/data-process/data-process";
 import {ActiveModal} from "../settings/active-modal";
 import {faker} from "@faker-js/faker";
-import {sendBotMessage} from "../api/api";
-import {BotMessage} from "../settings/bot-message";
+import { sendMessageToServer} from "../api/api";
+import {BotMessageStatus} from "../settings/bot-message-status";
 
 function TaskForm(): JSX.Element {
     const dispatch = useAppDispatch();
@@ -52,13 +52,13 @@ function TaskForm(): JSX.Element {
         dispatch(changeActiveModal(ActiveModal.NoModal));
 
         if (newTask.id === defaultTask.id) { //проверка на то, что добавляется именно новая задача (кривовато, но зато без новых полей и переменных)
-            sendBotMessage(BotMessage.AddTask, newTask.title)
+            sendMessageToServer(BotMessageStatus.AddTask, newTask.title);
         }
         if (newTask.taskStatus === StatusName.Done) {
-            sendBotMessage(BotMessage.TaskDone, newTask.title)
+            sendMessageToServer(BotMessageStatus.TaskDone, newTask.title)
         }
         if (newTask.taskStatus === StatusName.Failed) {
-            sendBotMessage(BotMessage.FailedTask, newTask.title)
+            sendMessageToServer(BotMessageStatus.FailedTask, newTask.title)
         }
     }
 
